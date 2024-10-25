@@ -1,3 +1,5 @@
+import utilities;
+
 public class statsCalc extends calculator{
     private int[] arr = new int[5];
 

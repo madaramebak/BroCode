@@ -1,3 +1,5 @@
+package tempconverter;
+
 import java.util.Scanner;
 
 public class tempConverter{

@@ -1,3 +1,5 @@
+package gradebook;
+
 import java.util.ArrayList;
 
 public class student{
