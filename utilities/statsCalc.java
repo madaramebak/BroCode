@@ -1,4 +1,4 @@
-import utilities;
+package  utilities;
 
 public class statsCalc extends calculator{
     private int[] arr = new int[5];
@@ -8,7 +8,7 @@ public class statsCalc extends calculator{
     }
 
     public static double median(int arr []){
-        double mid = arr.length /2;
+        int mid = arr.length /2;
        return arr[mid];
     }
 
