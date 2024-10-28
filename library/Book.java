@@ -1,40 +1,32 @@
 package library;
 
-public class Book{
-    private String name;
+public class Book extends Items{
     private int ISBN;
-    private String author;
+	   private int pageCount;
 
-    public Book(String name, int ISBN, String author){
-        this.name = name;
-        this.ISBN = ISBN;
-        this.author = author;
+    
+    public Book(String name, String author, int identifaction){
+		super(name, author, identifaction);
+		this.ISBN = identifaction;
+		this.pageCount = 0;
     }
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getISBN() {
+	@Override
+	public int getIdentification() {
 		return this.ISBN;
 	}
 
-	public void setISBN(int ISBN) {
+	@Override
+	public void setIdentification(int ISBN) {
 		this.ISBN = ISBN;
 	}
 
-	public String getAuthor() {
-		return this.author;
-	}
+	public int getPageCount() {
+        return this.pageCount;
+    }
 
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-
-    
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
 
 }

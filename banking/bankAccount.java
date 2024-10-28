@@ -1,6 +1,6 @@
 package banking;
 
-public class bankAccount{
+public class bankAccount implements actions{
     private int balance;
     private int accountNumber;
     private String name;
@@ -34,16 +34,23 @@ public class bankAccount{
 	public void setName(String name) {
 		this.name = name;
 	}
+    @Override
     public void deposit(int amount){
         this.balance += amount;
     }
 
+	@Override
     public void withdrawal(int amount){
+		if(amount > 0 && amount <= balance){
         this.balance -= amount;
+		}
     }
 
+    @Override
     public void checkBalance(){
-        System.out.println(this.balance);
+        System.out.println("User: " + getName());
+		System.out.println("Account number: " + getAccountNumber());
+		System.out.println("Balance: " + getBalance());
     }
 
 }

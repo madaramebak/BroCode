@@ -1,16 +1,18 @@
 package employeemanagement;
 import java.util.ArrayList;
 
-public class Employee{ 
+public class Employee { 
     private String name;
     private String role;
     private int employeeID;
+    private double salary;
     private static ArrayList<Employee> compRecords = new ArrayList<>();
 
     public Employee(String name, String role, int employeeID){
         this.name = name;
         this.role = role;
         this.employeeID = employeeID;
+        this.salary = 0;
     }
 
     public String getName() {
@@ -31,6 +33,14 @@ public class Employee{
 
     public String getRole(){
         return role;
+    }
+
+    public void salary (double salary){
+        this.salary = salary;
+    }
+
+    public double getSalary(){
+        return salary;
     }
 
     public void setRole(String role){
