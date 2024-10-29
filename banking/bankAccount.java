@@ -41,8 +41,20 @@ public class bankAccount implements actions{
 
 	@Override
     public void withdrawal(int amount){
-		if(amount > 0 && amount <= balance){
-        this.balance -= amount;
+		try{
+			if(amount < 0){
+				throw new InvalidAmountException("Sorry, you cannot withdraw a negative amount");
+			}
+			if(amount > balance){
+				throw new InsufficientFundsException("Sorry, you have insufficient funds");
+			}
+			balance -= amount;
+		}
+		catch(InvalidAmountException e){
+			System.out.println(e.getMessage());
+		}
+		catch(InsufficientFundsException e){
+			System.out.println(e.getMessage());
 		}
     }
 
@@ -52,5 +64,16 @@ public class bankAccount implements actions{
 		System.out.println("Account number: " + getAccountNumber());
 		System.out.println("Balance: " + getBalance());
     }
+
+	public static class InsufficientFundsException extends Exception{
+		public InsufficientFundsException(String message){
+			super(message);
+		}
+	}
+	public static class InvalidAmountException extends Exception{
+		public InvalidAmountException(String message){
+			super(message);
+		}
+	}
 
 }
