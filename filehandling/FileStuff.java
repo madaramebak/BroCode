@@ -1,6 +1,11 @@
-package filehandling;
+package grind.filehandling;
 import java.io.*;
 import java.nio.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileStuff {
 
@@ -18,7 +23,7 @@ public class FileStuff {
         }
     }
 
-    public void readAll (Path filePath){
+    public void readAll (Path filePath) throws IOException {
         List<String> lines = Files.readAllLines(filePath);
     }
 
